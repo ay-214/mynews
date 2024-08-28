@@ -41,5 +41,3 @@ Route::controller(ProfileController::class)
     Route::get('admin/profile/create','add');
     Route::get('admin/profile/edit','edit');
 });
-
-echo ("\n");
