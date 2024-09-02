@@ -1,3 +1,5 @@
+ /*PHP/Laravel 11 課題６ 【応用】 webpack.mix.jsを編集して、profile.scss をコンパイルするように編集してみましょう*/
+
 const mix = require('laravel-mix');
 
 /*
@@ -11,7 +13,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+ mix.js('resources/js/app.js', 'public/js')
+ .sass('resources/sass/app.scss', 'public/css')
+ .sass('resources/sass/profile.scss', 'public/css')
+ .sourceMaps();
