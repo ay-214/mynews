@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-/*PHP/Laravel 11 課題4:【応用】 プロフィール作成画面用に、resources/views/admin/profile/create.blade.php ファイルを作成し、3. で作成した profile.blade.phpファイルを読み込み、また プロフィールのページであることがわかるように titleとcontentを編集しましょう（ヒント: resources/views/admin/news/create.blade.php を参考にします）*/
-
+{{--PHP/Laravel 11 課題4 【応用】 プロフィール作成画面用に、resources/views/admin/profile/create.blade.php ファイルを作成し、3. で作成した profile.blade.phpファイルを読み込み、また プロフィールのページであることがわかるように titleとcontentを編集しましょう（ヒント: resources/views/admin/news/create.blade.php を参考にします）--}}
+<!DOCTYPE html> 
 
 @extends('layouts.profile')
 
