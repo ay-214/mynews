@@ -24,10 +24,10 @@ return new class extends Migration
              //趣味を保存するカラム
              $table->string('hobby');
               //自己紹介を保存するカラム
-            $table->string('introduction');
+            $table->text('introduction');
 
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
