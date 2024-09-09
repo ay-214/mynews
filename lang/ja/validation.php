@@ -167,6 +167,8 @@ return [
     */
    
     'attributes' => [
+        'title' => 'タイトル',
+        'body' => '本文',
 //PHP/Laravel 14 課題６ 
         'name' => '名前',
         'gender' => '性別',
