@@ -11,7 +11,6 @@ use App\Models\Profile;
 
 class ProfileController extends Controller
 {
-    //課題５ Admin/ProfileControllerに、以下のadd, create, edit, update それぞれのActionを追加してみましょう
     //viewを追記
     public function add()
     {
