@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 /*PHP/Laravel14 課題７ */
-use App\Models\Plofile;
+use App\Models\Profile;
 
 class ProfileController extends Controller
 {
