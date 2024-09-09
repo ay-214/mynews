@@ -22,9 +22,9 @@ return new class extends Migration
             //性別を保存するカラム
             $table->string('gender');
              //趣味を保存するカラム
-             $table->text('hobby');
+             $table->string('hobby');
               //自己紹介を保存するカラム
-            $table->text('introduction');
+            $table->string('introduction');
 
             $table->timestamps();
         });
