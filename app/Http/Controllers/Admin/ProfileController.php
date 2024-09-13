@@ -14,6 +14,7 @@ class ProfileController extends Controller
     //viewを追記
     public function add()
     {
+        \Debugbar::info("確認したい変数など");
         return view('admin.profile.create');
     }
     
@@ -35,14 +36,37 @@ class ProfileController extends Controller
     }
 
     //editを追記
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+        $profile = Profile::find($request->id);
+        if (empty($profile)) {
+            abort(404);
+        }
+        return view('admin.profile.edit', ['profile_form' => $profile]);
     }
     
     //updateを追記
-    public function update()
+    //PHP/Laravel 16 課題１
+    public function update(Request $request)
     {
-        return redirect('admin/profile/edit');
+        $this->validate($request, Profile::$rules);
+        $profile = Profile::find($request->id);
+        $profile_form = $request->all();
+        unset($profile_form['_token']);
+
+        $profile->fill($profile_form)->save();
+
+        return redirect('admin/profile/edit?id=' . $request->id);
+    }
+
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $profile = profile::find($request->id);
+
+        // 削除する
+        $profile->delete();
+
+        return redirect('admin/profile/');
     }
 }
