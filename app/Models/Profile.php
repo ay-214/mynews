@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-//PHP/Laravel 14 課題５
+
 protected $guarded = array('id');
 
 public static $rules = array(
@@ -17,4 +17,11 @@ public static $rules = array(
     'hobby' => 'required',
     'introduction' => 'required',
 );
+
+//PHP/Laravel 17 課題
+// Profile Modelに関連付けを行う
+public function profile_histories()
+{
+    return $this->hasMany('App\Models\profile_history');
+}
 }
