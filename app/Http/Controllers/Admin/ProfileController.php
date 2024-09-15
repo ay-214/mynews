@@ -1,13 +1,16 @@
 <?php
-//PHP/Laravel 08 課題４artisanを使って、Admin/ProfileControllerを作成しましょう
 
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-/*PHP/Laravel14 課題７ */
+//PHP/Laravel17 課題 
 use App\Models\Profile;
+// 以下を追記
+use App\Models\profile_history;
+// 以下を追記
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -19,7 +22,7 @@ class ProfileController extends Controller
     }
     
     //createを追記
-    /*PHP/Laravel14 課題７続き */
+   
     public function create(Request $request)
     {
         $this->validate($request, Profile::$rules);
@@ -46,7 +49,6 @@ class ProfileController extends Controller
     }
     
     //updateを追記
-    //PHP/Laravel 16 課題１
     public function update(Request $request)
     {
         $this->validate($request, Profile::$rules);
@@ -55,13 +57,20 @@ class ProfileController extends Controller
         unset($profile_form['_token']);
 
         $profile->fill($profile_form)->save();
+        
+        //PHP/Laravel17 課題 
+        // 以下を追記
+        $profile_history = new profile_history();
+        $profile_history->profile_id = $profile->id;
+        $profile_history->edited_at = Carbon::now();
+        $profile_history->save();
 
         return redirect('admin/profile/edit?id=' . $request->id);
     }
 
     public function delete(Request $request)
     {
-        // 該当するNews Modelを取得
+        // 該当するProfile Modelを取得
         $profile = profile::find($request->id);
 
         // 削除する
