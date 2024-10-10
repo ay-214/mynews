@@ -24,8 +24,7 @@
         {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
-        <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
-        {{-- ↑のassetの部分だが、テキスト指示ではsecure_assetとなっているが、それだと今使っているvscodeではうまく起動しないとのこと。（オンラインサポート時にメンターさんに相談。cloud9ベースのテキストのため、齟齬が出てきているとのこと。）起動するように直していただき、asset記述としている。 --}}
+        <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -46,11 +45,14 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        {{--PHP/Laravel 12 課題1  resources/views/layouts/profile.blade.php も編集して、 プロフィール編集画面にもログインリンクやログアウトリンクを表示するようにカスタマイズしましょう↓  --}}
                         <ul class="navbar-nav">
-                            @guest
+                        {{-- 以下を追記 --}}
+                        <!-- Authentication Links -->
+                        {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+                        @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
-                            @else
+                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                        @else
                             <li class="nav-item dropdown">
                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
