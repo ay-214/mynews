@@ -29,6 +29,9 @@
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
     </head>
     <body>
+         <div class="col-md-8 mx-auto">
+         <h2>my news　...まいにちの出来事。</h2>
+        </div>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
