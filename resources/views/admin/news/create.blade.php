@@ -4,7 +4,7 @@
 @section('title','ニュースの新規作成')
 
 @section('content')
-    <div ciass="container">
+    <div class="container">
         <div class="low">
             <div class="col-md-8 mx-auto">
                 <h2>ニュースの新規作成</h2>
