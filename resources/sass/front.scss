@@ -1,16 +1,23 @@
 //PHP/Laravel 19 課題で使用
 body {
-    color: #000;
+    color: #274765;
   }
-  
+
+  h2 {
+    font-family: "Times New Roman";
+    font-size: 50px;
+    color: #274765;
+    background-color: #F1F1F1;
+  }
+
   .navbar-laravel {
-    background-color: #000;
+    background-color: #8BB1D5;
   }
   
   .header {
     .logo {
         width: 120px;
-        height: 82px;
+        height: 50px;
     }
   }
   
@@ -21,6 +28,8 @@ body {
       .image {
         img {
       width: 100%;
+      border: 1px solid#f1f1f14f;
+      border-radius: 20px;
         }
       }
       .title {
@@ -28,10 +37,16 @@ body {
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: #93939355;
+        border: 1px solid#93939355;
+        border-radius: 20px;
         h1 {
-      color: #fff;
-      font-size: 1.2em;
+        color: #FFF;
+        font-size: 1.2em;
+        font-family: "HiraMinProN-W3";
+        font-weight: bold;
+        text-align: center;
+        padding:10px 5px 5px 5px;
         }
       }
       .body {
